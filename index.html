@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>GameTracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,44 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>GameTracker</h1>
+
+      <h4 id='auth-message'></h4>
+
+      <form id='sign-up' class='sign-up'>
+        <fieldset>
+          <legend>Create an account</legend>
+          <input type="email" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <button type="submit">Sign Up</button>
+        </fieldset>
+      </form>
+
+      <form id='sign-in' class='sign-in'>
+        <fieldset>
+          <legend>Already have an account? Sign in to play</legend>
+          <input type="email" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <button type="submit">Sign In</button>
+        </fieldset>
+      </form>
+
+      <form id='change-password'>
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <button type="submit">Change Password</button>
+        </fieldset>
+      </form>
+
+      <form id='sign-out'>
+        <fieldset>
+          <legend>Sign Out</legend>
+          <button type="submit">Sign Out</button>
+        </fieldset>
+      </form>
+
     </body>
 </html>
