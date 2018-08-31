@@ -6,8 +6,6 @@ const ui = require('./ui.js')
 
 const onCreateGame = function (event) {
   event.preventDefault()
-  // console.log('submitted the form')
-  // console.log('getFormFields', getFormFields)
   const data = getFormFields(event.target)
   console.log('data from the form:', data)
   api.createGame(data)
