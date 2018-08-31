@@ -1,21 +1,23 @@
 'use strict'
 // const store = require('../store.js')
-const createGamesTemplate = require('./games-listing.handlebars')
+const gamesTemplate = require('./games-listing.handlebars')
 
 const createGameSuccess = function (data) {
   console.log('game created')
-  const createGameHtml = createGamesTemplate({ games: data })
-  $('.content').append(createGameHtml)
-  console.log(createGameHtml)
+  $('#create-game input').val('')
+  // const createGameHtml = createGamesTemplate({ games: data })
+  // $('.content').append(createGameHtml)
+  // console.log(createGameHtml)
 }
 const createGameFailure = function () {
+  $('#create-game input').val('')
   console.log('game not created')
 }
 
-const getAllGamesSuccess = function (response) {
-  console.log('here are all the games', response)
-  // const getGamesHtml = getGamesTemplate({ games: data.games })
-  // $('.content').append(getGamesHtml)
+const getAllGamesSuccess = function (data) {
+  console.log('here are all the games', data)
+  const getGamesHtml = gamesTemplate({ games: data.games })
+  $('.content').append(getGamesHtml)
 }
 
 const getGameSuccess = function (response) {
@@ -27,18 +29,22 @@ const getGameFailure = function () {
 }
 
 const updateGameSuccess = function (response) {
+  $('#update-game input').val('')
   console.log('game is updated')
 }
 
 const updateGameFailure = function () {
+  $('#update-game input').val('')
   console.log('game is not updated')
 }
 
 const deleteGameSuccess = function () {
+  $('#delete-game input').val('')
   console.log('game is deleted')
 }
 
 const deleteGameFailure = function () {
+  $('#delete-game input').val('')
   console.log('game not deleted')
 }
 
