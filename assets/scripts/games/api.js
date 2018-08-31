@@ -4,7 +4,6 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const createGame = function (data) {
-  console.log('api data', data)
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -24,7 +23,6 @@ const getAllGames = function () {
 }
 
 const getGame = function (data) {
-  console.log('id is', data)
   return $.ajax({
     url: config.apiUrl + '/games/' + data.game.id,
     method: 'GET',
@@ -34,8 +32,20 @@ const getGame = function (data) {
   })
 }
 
+const updateGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + data.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createGame,
   getAllGames,
-  getGame
+  getGame,
+  updateGame
 }

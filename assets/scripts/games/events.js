@@ -28,10 +28,19 @@ const onGetGame = function (event) {
     .catch(ui.getGameFailure)
 }
 
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateGame(data)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
+}
+
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame)
   $('#get-all-games').on('submit', onGetGames)
   $('#get-game').on('submit', onGetGame)
+  $('#update-game').on('submit', onUpdateGame)
 }
 
 module.exports = {

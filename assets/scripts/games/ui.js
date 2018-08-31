@@ -26,10 +26,20 @@ const getGameFailure = function () {
   console.log('getting a game did not work')
 }
 
+const updateGameSuccess = function (response) {
+  console.log('game is updated')
+}
+
+const updateGameFailure = function () {
+  console.log('game is not updated')
+}
+
 module.exports = {
   createGameSuccess,
   createGameFailure,
   getAllGamesSuccess,
   getGameSuccess,
-  getGameFailure
+  getGameFailure,
+  updateGameSuccess,
+  updateGameFailure
 }
