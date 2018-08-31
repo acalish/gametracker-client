@@ -23,7 +23,19 @@ const getAllGames = function () {
   })
 }
 
+const getGame = function (data) {
+  console.log('id is', data)
+  return $.ajax({
+    url: config.apiUrl + '/games/' + data.game.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createGame,
-  getAllGames
+  getAllGames,
+  getGame
 }

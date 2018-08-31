@@ -1,22 +1,4 @@
-  <!-- <section data-id="{{game.game.id}}">
-    <h1 data-id="{{game.game.id}}"> <small>Name: {{game.game.name}}</small></h1>
-      {{game.game.name}}
-    {{game.game.comment}}
-  </section> -->
-  {{#each games as |game|}}
-    {{log game}}
-    <!-- {{> partial}}
-    Don't uncomment yet -->
-
-
-    <section data-id="{{game.id}}">
-      <h1 data-id="{{game.id}}"> <small>Name: {{game.name}}</small></h1>
-      {{#if game.name}}
-        {{game.name}}
-      {{else}}
-        No game provided.
-      {{/if}}
-      <button id='get-all-games'>See Games</button>
-    </section>
-
-  {{/each}}
+<section data-id="{{game.id}}">
+  <h1 data-id="{{game.id}}"> <small>Game: {{game.name}}</small></h1>
+    {{game.comment}}
+</section>

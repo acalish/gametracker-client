@@ -12,14 +12,24 @@ const createGameFailure = function () {
   console.log('game not created')
 }
 
-const getAllGamesSuccess = function (data) {
-  console.log('here are all the games', data)
+const getAllGamesSuccess = function (response) {
+  console.log('here are all the games', response)
   // const getGamesHtml = getGamesTemplate({ games: data.games })
   // $('.content').append(getGamesHtml)
+}
+
+const getGameSuccess = function (response) {
+  console.log('here is the one game', response)
+}
+
+const getGameFailure = function () {
+  console.log('getting a game did not work')
 }
 
 module.exports = {
   createGameSuccess,
   createGameFailure,
-  getAllGamesSuccess
+  getAllGamesSuccess,
+  getGameSuccess,
+  getGameFailure
 }
