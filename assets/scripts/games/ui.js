@@ -12,7 +12,14 @@ const createGameFailure = function () {
   console.log('game not created')
 }
 
+const getAllGamesSuccess = function (data) {
+  console.log('here are all the games', data)
+  // const getGamesHtml = getGamesTemplate({ games: data.games })
+  // $('.content').append(getGamesHtml)
+}
+
 module.exports = {
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  getAllGamesSuccess
 }

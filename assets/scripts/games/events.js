@@ -13,8 +13,16 @@ const onCreateGame = function (event) {
     .catch(ui.createGameFailure)
 }
 
+const onGetGames = function (event) {
+  event.preventDefault()
+  api.getAllGames()
+    .then(ui.getAllGamesSuccess)
+    .catch(ui.getAllGamesFailure)
+}
+
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame)
+  $('#get-all-games').on('submit', onGetGames)
 }
 
 module.exports = {

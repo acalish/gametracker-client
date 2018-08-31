@@ -16,6 +16,14 @@ const createGame = function (data) {
   })
 }
 
+const getAllGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET'
+  })
+}
+
 module.exports = {
-  createGame
+  createGame,
+  getAllGames
 }

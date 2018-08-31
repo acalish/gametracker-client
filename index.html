@@ -63,8 +63,8 @@
       <form id='update-game'>
         <fieldset>
           <legend>Update A Game</legend>
-          <input type="text" name="Game Name" placeholder="game name">
-          <input type="text" name="Game Comment" placeholder="comment">
+          <input type="text" name="game[name]" placeholder="game name">
+          <input type="text" name="game[comment]" placeholder="comment">
           <button type="submit">Update a Game</button>
         </fieldset>
       </form>
@@ -72,20 +72,20 @@
       <form id='delete-game'>
         <fieldset>
           <legend>Delete A Game</legend>
-          <input type="text" name="Game ID" placeholder="game ID">
+          <input type="text" name="game[id]" placeholder="game ID">
           <button type="submit">Delete a Game</button>
         </fieldset>
       </form>
 
-      <form id='show-game'>
+      <form id='get-game'>
         <fieldset>
           <legend>Show A Game</legend>
-          <input type="text" name="Game ID" placeholder="game ID">
+          <input type="text" name="game[id]" placeholder="game ID">
           <button type="submit">Show a Game</button>
         </fieldset>
       </form>
 
-      <form id='show-all-games'>
+      <form id='get-all-games'>
         <fieldset>
           <legend>Show All Games</legend>
           <button type="submit">Show All Games</button>
