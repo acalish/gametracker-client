@@ -36,11 +36,20 @@ const onUpdateGame = function (event) {
     .catch(ui.updateGameFailure)
 }
 
+const onDeleteGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.deleteGame(data)
+    .then(ui.deleteGameSuccess)
+    .catch(ui.deleteGameFailure)
+}
+
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame)
   $('#get-all-games').on('submit', onGetGames)
   $('#get-game').on('submit', onGetGame)
   $('#update-game').on('submit', onUpdateGame)
+  $('#delete-game').on('submit', onDeleteGame)
 }
 
 module.exports = {

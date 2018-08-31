@@ -34,6 +34,14 @@ const updateGameFailure = function () {
   console.log('game is not updated')
 }
 
+const deleteGameSuccess = function () {
+  console.log('game is deleted')
+}
+
+const deleteGameFailure = function () {
+  console.log('game not deleted')
+}
+
 module.exports = {
   createGameSuccess,
   createGameFailure,
@@ -41,5 +49,7 @@ module.exports = {
   getGameSuccess,
   getGameFailure,
   updateGameSuccess,
-  updateGameFailure
+  updateGameFailure,
+  deleteGameSuccess,
+  deleteGameFailure
 }

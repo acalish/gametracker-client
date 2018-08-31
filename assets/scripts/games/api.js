@@ -43,9 +43,21 @@ const updateGame = function (data) {
   })
 }
 
+const deleteGame = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + data.game.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createGame,
   getAllGames,
   getGame,
-  updateGame
+  updateGame,
+  deleteGame
 }
