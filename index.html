@@ -28,14 +28,14 @@
 
       <form id='sign-in' class='sign-in'>
         <fieldset>
-          <legend>Already have an account? Sign in to play</legend>
+          <legend>Already have an account? Sign in below</legend>
           <input type="email" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="Password">
           <button type="submit">Sign In</button>
         </fieldset>
       </form>
 
-      <form id='change-password' class='hidden'>
+      <form id='change-password' class='d-none'>
         <fieldset>
           <legend>Change Password</legend>
           <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -44,16 +44,16 @@
         </fieldset>
       </form>
 
-      <form id='sign-out' class='hidden'>
+      <form id='sign-out' class='d-none'>
         <fieldset>
           <legend>Sign Out</legend>
           <button type="submit">Sign Out</button>
         </fieldset>
       </form>
 
-    <h4 id='game-message'>I am the game message</h4>
+    <h4 id='game-message' class='d-none'></h4>
 
-    <div id='game' class='hidden'>
+    <div id='game' class='d-none'>
       <form id='create-game'>
         <fieldset>
           <legend>Create Game</legend>

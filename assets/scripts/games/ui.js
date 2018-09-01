@@ -3,56 +3,54 @@
 const gamesTemplate = require('./games-listing.handlebars')
 
 const createGameSuccess = function (data) {
-  $('#game-message').text('you created a game!')
+  console.log('you created ', data.game.name)
+  $('#game-message').text('you created ' + data.game.name + ' and said ' +
+    data.game.comment)
   $('#create-game input').val('')
   // const createGameHtml = createGamesTemplate({ games: data })
   // $('.content').append(createGameHtml)
   // console.log(createGameHtml)
 }
 const createGameFailure = function () {
-  $('#game-message').text('you did not create game')
+  $('#game-message').text('unable to create a game')
   $('#create-game input').val('')
-  console.log('game not created')
 }
 
 const getAllGamesSuccess = function (data) {
   console.log('here are all the games', data)
   const getGamesHtml = gamesTemplate({ games: data.games })
   $('.content').append(getGamesHtml)
+  $('#get-games input').val('')
 }
 
-const getGameSuccess = function (response) {
-  $('#game-message').text('here is that one game ' + response)
-  console.log('here is the one game', response)
+const getGameSuccess = function (data) {
+  $('#game-message').text('here is ' + data.game.name)
+  $('#get-game input').val('')
 }
 
-const getGameFailure = function () {
-  $('#game-message').text('you cannot see that game')
-  console.log('getting a game did not work')
+const getGameFailure = function (data) {
+  $('#game-message').text('unable to show this game')
+  $('#get-game input').val('')
 }
 
-const updateGameSuccess = function (response) {
-  $('#game-message').text('you updated a game!')
+const updateGameSuccess = function (data) {
+  $('#game-message').text('you updated ' + data.game.name)
   $('#update-game input').val('')
-  console.log('game is updated')
 }
 
-const updateGameFailure = function () {
-  $('#game-message').text('you did not update a game!')
+const updateGameFailure = function (data) {
+  $('#game-message').text('unable to update ' + data.name.game)
   $('#update-game input').val('')
-  console.log('game is not updated')
 }
 
-const deleteGameSuccess = function () {
-  $('#game-message').text('you deleted a game!')
+const deleteGameSuccess = function (data) {
+  $('#game-message').text('Game deleted')
   $('#delete-game input').val('')
-  console.log('game is deleted')
 }
 
-const deleteGameFailure = function () {
-  $('#game-message').text('you did not delete a game!')
+const deleteGameFailure = function (data) {
+  $('#game-message').text('unable to delete this game')
   $('#delete-game input').val('')
-  console.log('game not deleted')
 }
 
 module.exports = {

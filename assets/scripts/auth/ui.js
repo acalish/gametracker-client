@@ -13,10 +13,12 @@ const signUpFailure = function () {
 const signInSuccess = function (response) {
   $('#auth-message').text('Welcome back!')
   $('#sign-in input').val('')
-  $('#change-password').removeClass('hidden')
-  $('#sign-out').removeClass('hidden')
+  $('#change-password').removeClass('d-none')
+  $('#sign-out').removeClass('d-none')
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#game-message').removeClass('d-none')
+  $('#game').removeClass('d-none')
   store.user = response.user
 }
 
