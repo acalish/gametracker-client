@@ -11,14 +11,12 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-//  console.log('Response is', response)
   $('#auth-message').text('Welcome back!')
   $('#sign-in input').val('')
-  // $('#change-password').removeClass('hidden')
-  // $('#sign-out').removeClass('hidden')
-  // $('#start-game').removeClass('hidden')
-  // $('#sign-in').hide()
-  // $('#sign-up').hide()
+  $('#change-password').removeClass('hidden')
+  $('#sign-out').removeClass('hidden')
+  $('#sign-in').hide()
+  $('#sign-up').hide()
   store.user = response.user
 }
 

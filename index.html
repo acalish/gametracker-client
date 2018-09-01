@@ -35,7 +35,7 @@
         </fieldset>
       </form>
 
-      <form id='change-password'>
+      <form id='change-password' class='hidden'>
         <fieldset>
           <legend>Change Password</legend>
           <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -44,13 +44,16 @@
         </fieldset>
       </form>
 
-      <form id='sign-out'>
+      <form id='sign-out' class='hidden'>
         <fieldset>
           <legend>Sign Out</legend>
           <button type="submit">Sign Out</button>
         </fieldset>
       </form>
 
+    <h4 id='game-message'>I am the game message</h4>
+
+    <div id='game' class='hidden'>
       <form id='create-game'>
         <fieldset>
           <legend>Create Game</legend>
@@ -92,9 +95,10 @@
           <button type="submit">Show All Games</button>
         </fieldset>
       </form>
+    </div>
 
       <main>
-        <div id="content" class="content">I am content!</div>
+        <div id="content" class="content"></div>
       </main>
 
     </body>
