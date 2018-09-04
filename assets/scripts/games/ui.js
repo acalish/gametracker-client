@@ -3,6 +3,7 @@
 const gamesTemplate = require('./games-listing.handlebars')
 
 const createGameSuccess = function (data) {
+  $('#game-message').text('')
   $('#create-game input').val('')
   const createGameHtml = gamesTemplate({ games: data })
   $('.content').append(createGameHtml)
@@ -13,6 +14,7 @@ const createGameFailure = function () {
 }
 
 const getAllGamesSuccess = function (data) {
+  $('#game-message').text('')
   $('.content').html('')
   const getGamesHtml = gamesTemplate({ games: data.games })
   $('.content').append(getGamesHtml)
@@ -35,7 +37,7 @@ const updateGameSuccess = function (data) {
 }
 
 const updateGameFailure = function (data) {
-  $('#game-message').text('unable to update ' + data.name.game)
+  $('#game-message').text('unable to update')
   $('#update-game input').val('')
 }
 

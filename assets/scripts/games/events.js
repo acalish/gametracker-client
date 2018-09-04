@@ -3,6 +3,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 
 const api = require('./api.js')
 const ui = require('./ui.js')
+// const store = require('../store.js')
 
 const onCreateGame = function (event) {
   event.preventDefault()
@@ -32,8 +33,8 @@ const onUpdateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.updateGame(data)
+    // .then(() => onGetGames(event))
     .then(ui.updateGameSuccess)
-    .then(() => onGetGames(event))
     .catch(ui.updateGameFailure)
 }
 
@@ -45,11 +46,15 @@ const onDeleteGame = function (event) {
     .catch(ui.deleteGameFailure)
 }
 
-const onUpdate2 = function (event) {
-  event.preventDefault()
-  const gameId = $(event.target).closest('section').data('id')
-  console.log('clicked update for', gameId)
-}
+// const onUpdate2 = function (event) {
+//   event.preventDefault()
+//   const gameId = $(event.target).closest('section').data('id')
+//   console.log('clicked update for', gameId)
+//   store.gameId = gameId
+//   api.updateGame(gameId)
+//     .then(ui.updateGamesSuccess)
+//     .catch(ui.updateGameFailure)
+// }
 
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame)
@@ -57,8 +62,10 @@ const addHandlers = function () {
   $('#get-game').on('submit', onGetGame)
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
-  $('.content').on('click', '#update-btn', onUpdate2)
+  // $('.content').on('click', '#update-btn', onUpdate2)
 }
+
+// add handler to get the form, and then another one to submit that information
 
 module.exports = {
   addHandlers
