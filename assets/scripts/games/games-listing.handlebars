@@ -1,10 +1,11 @@
 {{#each games as |game|}}
 
-  <div>
+  <section data-id="{{game.id}}">
     <h1 data-id="{{game.id}}"> <small>Name: {{game.name}}</small></h1>
-    <p>Comment: {{game.comment}}</p>
-    <section data-id="{{game.id}}">
-    </section>
-  </div>
+      <p>Comment: {{game.comment}}</p>
+      <p>ID: {{game.id}}</p>
+      <button id='remove-btn'>Remove</button>
+      <button id='update-btn'>Update</button>
+  </section>
 
 {{/each}}

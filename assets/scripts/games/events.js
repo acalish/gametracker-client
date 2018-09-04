@@ -38,10 +38,19 @@ const onUpdateGame = function (event) {
 
 const onDeleteGame = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.deleteGame(data)
-    .then(ui.deleteGameSuccess)
-    .catch(ui.deleteGameFailure)
+  const gameId = $(event.target).closest('section').data('id')
+  console.log('remove ID data is', gameId)
+  if (confirm('Are you sure you want to delete this game?')) {
+    api.deleteGame(gameId)
+      .then(ui.deleteGameSuccess)
+      .catch(ui.deleteGameFailure)
+  }
+}
+
+const onUpdate2 = function (event) {
+  event.preventDefault()
+  const gameId = $(event.target).closest('section').data('id')
+  console.log('clicked update for', gameId)
 }
 
 const addHandlers = function () {
@@ -49,7 +58,8 @@ const addHandlers = function () {
   $('#get-all-games').on('submit', onGetGames)
   $('#get-game').on('submit', onGetGame)
   $('#update-game').on('submit', onUpdateGame)
-  $('#delete-game').on('submit', onDeleteGame)
+  $('.content').on('click', '#remove-btn', onDeleteGame)
+  $('.content').on('click', '#update-btn', onUpdate2)
 }
 
 module.exports = {

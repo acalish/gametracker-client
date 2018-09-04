@@ -18,7 +18,10 @@ const createGame = function (data) {
 const getAllGames = function () {
   return $.ajax({
     url: config.apiUrl + '/games',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -43,14 +46,14 @@ const updateGame = function (data) {
   })
 }
 
-const deleteGame = function (data) {
+const deleteGame = function (gameId) {
+  console.log(config.apiUrl)
   return $.ajax({
-    url: config.apiUrl + '/games/' + data.game.id,
+    url: config.apiUrl + '/games/' + gameId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 }
 
@@ -59,5 +62,6 @@ module.exports = {
   getAllGames,
   getGame,
   updateGame,
+  // deleteGame,
   deleteGame
 }

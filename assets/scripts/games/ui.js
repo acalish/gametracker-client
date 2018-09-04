@@ -17,6 +17,7 @@ const createGameFailure = function () {
 }
 
 const getAllGamesSuccess = function (data) {
+  $('.content').html('')
   console.log('here are all the games', data)
   const getGamesHtml = gamesTemplate({ games: data.games })
   $('.content').append(getGamesHtml)
@@ -24,7 +25,7 @@ const getAllGamesSuccess = function (data) {
 }
 
 const getGameSuccess = function (data) {
-  $('#game-message').text('here is ' + data.game.name)
+  $('#game-message').text('Name: ' + data.game.name + ' Comment: ' + data.game.comment)
   $('#get-game input').val('')
 }
 
