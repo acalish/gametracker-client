@@ -1,1 +1,29 @@
 @import '~bootstrap/scss/bootstrap';
+
+$background-color: #97cfca;
+$border-color: #3f7c9d;
+$font-color: #144149;
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+}
+
+button {
+  color: $font-color;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  border: 1px solid $border-color;
+}
+
+section {
+  border: 3px solid $border-color;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
