@@ -33,6 +33,7 @@ const onUpdateGame = function (event) {
   const data = getFormFields(event.target)
   api.updateGame(data)
     .then(ui.updateGameSuccess)
+    .then(() => onGetGames(event))
     .catch(ui.updateGameFailure)
 }
 
