@@ -3,13 +3,9 @@
 const gamesTemplate = require('./games-listing.handlebars')
 
 const createGameSuccess = function (data) {
-  console.log('you created ', data.game.name)
-  $('#game-message').text('you created ' + data.game.name + ' and said ' +
-    data.game.comment)
   $('#create-game input').val('')
-  // const createGameHtml = createGamesTemplate({ games: data })
-  // $('.content').append(createGameHtml)
-  // console.log(createGameHtml)
+  const createGameHtml = gamesTemplate({ games: data })
+  $('.content').append(createGameHtml)
 }
 const createGameFailure = function () {
   $('#game-message').text('unable to create a game')
