@@ -34,12 +34,12 @@ const onUpdateGame = function (event) {
   api.updateGame(data)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
+  console.log('data is now', data)
 }
 
 const onDeleteGame = function (event) {
   event.preventDefault()
   const gameId = $(event.target).closest('section').data('id')
-  console.log('remove ID data is', gameId)
   if (confirm('Are you sure you want to delete this game?')) {
     api.deleteGame(gameId)
       .then(ui.deleteGameSuccess)

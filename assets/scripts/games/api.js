@@ -40,6 +40,7 @@ const updateGame = function (data) {
     url: config.apiUrl + '/games/' + data.game.id,
     method: 'PATCH',
     headers: {
+      ContentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
     data
@@ -47,7 +48,6 @@ const updateGame = function (data) {
 }
 
 const deleteGame = function (gameId) {
-  console.log(config.apiUrl)
   return $.ajax({
     url: config.apiUrl + '/games/' + gameId,
     method: 'DELETE',
@@ -62,6 +62,5 @@ module.exports = {
   getAllGames,
   getGame,
   updateGame,
-  // deleteGame,
   deleteGame
 }
