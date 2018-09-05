@@ -4,6 +4,7 @@ const gamesTemplate = require('./games-listing.handlebars')
 
 const createGameSuccess = function (data) {
   $('#game-message').text('')
+  $('#no-game-message').text('')
   $('#create-game input').val('')
   const createGameHtml = gamesTemplate({ games: data })
   $('.content').append(createGameHtml)
@@ -17,8 +18,10 @@ const getAllGamesSuccess = function (data) {
   $('#game-message').text('')
   $('.content').html('')
   const getGamesHtml = gamesTemplate({ games: data.games })
+  console.log('data.games is', data.games)
   $('.content').append(getGamesHtml)
   $('#get-games input').val('')
+  $('#clear-games-btn').removeClass('d-none')
 }
 
 const getGameSuccess = function (data) {
@@ -37,7 +40,7 @@ const updateGameSuccess = function (data) {
 }
 
 const updateGameFailure = function (data) {
-  $('#game-message').text('unable to update')
+  $('#game-message').text('unable to update this game')
   $('#update-game input').val('')
 }
 
@@ -51,6 +54,10 @@ const deleteGameFailure = function (data) {
   $('#delete-game input').val('')
 }
 
+const clearGames = function () {
+  $('.content').empty()
+}
+
 module.exports = {
   createGameSuccess,
   createGameFailure,
@@ -60,5 +67,6 @@ module.exports = {
   updateGameSuccess,
   updateGameFailure,
   deleteGameSuccess,
-  deleteGameFailure
+  deleteGameFailure,
+  clearGames
 }

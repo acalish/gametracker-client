@@ -8,7 +8,6 @@ const ui = require('./ui.js')
 const onCreateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data from the form:', data)
   api.createGame(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
@@ -56,6 +55,11 @@ const onDeleteGame = function (event) {
 //     .catch(ui.updateGameFailure)
 // }
 
+const onClearGames = function (event) {
+  event.preventDefault()
+  ui.clearGames()
+}
+
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame)
   $('#get-all-games').on('submit', onGetGames)
@@ -63,6 +67,7 @@ const addHandlers = function () {
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
   // $('.content').on('click', '#update-btn', onUpdate2)
+  $('#clear-games-btn').on('click', onClearGames)
 }
 
 // add handler to get the form, and then another one to submit that information
