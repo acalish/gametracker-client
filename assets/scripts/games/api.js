@@ -35,17 +35,17 @@ const getGame = function (data) {
   })
 }
 
-const updateGame = function (data) {
-  return $.ajax({
-    url: config.apiUrl + '/games/' + data.game.id,
-    method: 'PATCH',
-    headers: {
-      ContentType: 'application/json',
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
+// const updateGame = function (data) {
+//   return $.ajax({
+//     url: config.apiUrl + '/games/' + data.game.id,
+//     method: 'PATCH',
+//     headers: {
+//       ContentType: 'application/json',
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 
 const deleteGame = function (gameId) {
   return $.ajax({
@@ -57,10 +57,23 @@ const deleteGame = function (gameId) {
   })
 }
 
+const update2 = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.gameId,
+    method: 'PATCH',
+    headers: {
+      ContentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createGame,
   getAllGames,
   getGame,
-  updateGame,
-  deleteGame
+  // updateGame,
+  deleteGame,
+  update2
 }

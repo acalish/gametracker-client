@@ -3,13 +3,14 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 
 const api = require('./api.js')
 const ui = require('./ui.js')
-// const store = require('../store.js')
+const store = require('../store.js')
 
 const onCreateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.createGame(data)
     .then(ui.createGameSuccess)
+    // .then(ui.getAllGamesSuccess)
     .catch(ui.createGameFailure)
 }
 
@@ -31,9 +32,9 @@ const onGetGame = function (event) {
 const onUpdateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.updateGame(data)
-    // .then(() => onGetGames(event))
-    .then(ui.updateGameSuccess)
+  api.update2(data)
+    .then(() => onGetGames(event))
+    // .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
 }
 
@@ -50,10 +51,18 @@ const onDeleteGame = function (event) {
 //   const gameId = $(event.target).closest('section').data('id')
 //   console.log('clicked update for', gameId)
 //   store.gameId = gameId
-//   api.updateGame(gameId)
+//   api.update2(store.gameId)
 //     .then(ui.updateGamesSuccess)
 //     .catch(ui.updateGameFailure)
 // }
+
+const onUpdate2 = function (event) {
+  event.preventDefault()
+  const gameId = $(event.target).closest('section').data('id')
+  store.gameId = gameId
+  console.log('store gameID is', store.gameId)
+  ui.update2()
+}
 
 const onClearGames = function (event) {
   event.preventDefault()
@@ -66,7 +75,7 @@ const addHandlers = function () {
   $('#get-game').on('submit', onGetGame)
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
-  // $('.content').on('click', '#update-btn', onUpdate2)
+  $('.content').on('click', '#update-btn', onUpdate2)
   $('#clear-games-btn').on('click', onClearGames)
 }
 

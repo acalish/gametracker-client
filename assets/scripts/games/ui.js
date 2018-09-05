@@ -22,7 +22,6 @@ const getAllGamesSuccess = function (data) {
   $('.content').append(getGamesHtml)
   $('#get-games input').val('')
   $('#clear-games-btn').removeClass('d-none')
-  $('#update-game').removeClass('d-none')
 }
 
 const getGameSuccess = function (data) {
@@ -59,6 +58,10 @@ const clearGames = function () {
   $('.content').empty()
 }
 
+const update2 = function () {
+  $('#update-game').removeClass('d-none')
+}
+
 module.exports = {
   createGameSuccess,
   createGameFailure,
@@ -69,5 +72,6 @@ module.exports = {
   updateGameFailure,
   deleteGameSuccess,
   deleteGameFailure,
-  clearGames
+  clearGames,
+  update2
 }
