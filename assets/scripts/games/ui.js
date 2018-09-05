@@ -4,7 +4,7 @@ const gamesTemplate = require('./games-listing.handlebars')
 
 const createGameSuccess = function (data) {
   $('#game-message').text('')
-  $('#no-game-message').text('')
+  // $('#no-game-message').text('')
   $('#create-game input').val('')
   const createGameHtml = gamesTemplate({ games: data })
   $('.content').append(createGameHtml)
@@ -48,7 +48,7 @@ const updateGameFailure = function (data) {
 }
 
 const deleteGameSuccess = function (data) {
-  $('#game-message').text('Game deleted')
+  // $('#game-message').text('Game deleted')
   $('#delete-game input').val('')
   $('#create-game').removeClass('d-none')
 }
