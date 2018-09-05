@@ -7,10 +7,12 @@ const createGameSuccess = function (data) {
   $('#create-game input').val('')
   const createGameHtml = gamesTemplate({ games: data })
   $('.content').append(createGameHtml)
+  $('#auth-message').addClass('d-none')
 }
 const createGameFailure = function () {
   $('#game-message').text('unable to create a game')
   $('#create-game input').val('')
+  $('#auth-message').addClass('d-none')
 }
 
 const getAllGamesSuccess = function (data) {
@@ -20,6 +22,7 @@ const getAllGamesSuccess = function (data) {
   $('.content').append(getGamesHtml)
   $('#get-games input').val('')
   $('#hide-games-btn').removeClass('d-none')
+  $('#auth-message').addClass('d-none')
 }
 
 // const getGameSuccess = function (data) {
@@ -37,6 +40,7 @@ const updateGameSuccess = function (data) {
   $('#create-game').removeClass('d-none')
   $('#update-game').addClass('d-none')
   $('#game-message').text('')
+  $('#auth-message').addClass('d-none')
 }
 
 const updateGameFailure = function (data) {
@@ -44,20 +48,24 @@ const updateGameFailure = function (data) {
   $('#update-game input').val('')
   $('#create-game').removeClass('d-none')
   $('#update-game').addClass('d-none')
+  $('#auth-message').addClass('d-none')
 }
 
 const deleteGameSuccess = function (data) {
   $('#delete-game input').val('')
   $('#create-game').removeClass('d-none')
+  $('#auth-message').addClass('d-none')
 }
 
 const deleteGameFailure = function (data) {
   $('#game-message').text('unable to delete this game')
   $('#delete-game input').val('')
+  $('#auth-message').addClass('d-none')
 }
 
 const clearGames = function () {
   $('.content').empty()
+  $('#auth-message').addClass('d-none')
 }
 
 const updateClick = function () {
@@ -68,6 +76,7 @@ const updateClick = function () {
   // populate inputs with current values
   $('#update-name').val(store.gameName)
   $('#update-comment').val(store.gameComment)
+  $('#auth-message').addClass('d-none')
 }
 
 module.exports = {
