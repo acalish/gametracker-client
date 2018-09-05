@@ -64,7 +64,7 @@ const onUpdate2 = function (event) {
   ui.update2()
 }
 
-const onClearGames = function (event) {
+const onHideGames = function (event) {
   event.preventDefault()
   ui.clearGames()
 }
@@ -76,7 +76,7 @@ const addHandlers = function () {
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
   $('.content').on('click', '#update-btn', onUpdate2)
-  $('#clear-games-btn').on('click', onClearGames)
+  $('#hide-games-btn').on('click', onHideGames)
 }
 
 // add handler to get the form, and then another one to submit that information
