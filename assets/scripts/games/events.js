@@ -60,13 +60,10 @@ const onUpdate2 = function (event) {
   event.preventDefault()
   const gameId = $(event.target).closest('section').data('id')
   store.gameId = gameId
-  console.log('game ID', store.gameId)
   const gameName = $(event.target).closest('section').data('name')
   store.gameName = gameName
-  console.log('current name', store.gameName)
   const gameComment = $(event.target).closest('section').data('comment')
   store.gameComment = gameComment
-  console.log('current comment', store.gameComment)
   ui.update2()
 }
 
@@ -78,7 +75,6 @@ const onHideGames = function (event) {
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame)
   $('#get-all-games').on('submit', onGetGames)
-  // $('#get-game').on('submit', onGetGame)
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
   $('.content').on('click', '#update-btn', onUpdate2)
