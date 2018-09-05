@@ -60,7 +60,13 @@ const onUpdate2 = function (event) {
   event.preventDefault()
   const gameId = $(event.target).closest('section').data('id')
   store.gameId = gameId
-  console.log('store gameID is', store.gameId)
+  console.log('game ID', store.gameId)
+  const gameName = $(event.target).closest('section').data('name')
+  store.gameName = gameName
+  console.log('current name', store.gameName)
+  const gameComment = $(event.target).closest('section').data('comment')
+  store.gameComment = gameComment
+  console.log('current comment', store.gameComment)
   ui.update2()
 }
 

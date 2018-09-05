@@ -1,5 +1,5 @@
 'use strict'
-// const store = require('../store.js')
+const store = require('../store.js')
 const gamesTemplate = require('./games-listing.handlebars')
 
 const createGameSuccess = function (data) {
@@ -39,12 +39,14 @@ const updateGameSuccess = function (data) {
   $('#update-game input').val('')
   $('#create-game').removeClass('d-none')
   $('#update-game').addClass('d-none')
+  $('#game-message').text('')
 }
 
 const updateGameFailure = function (data) {
   $('#game-message').text('unable to update this game')
   $('#update-game input').val('')
   $('#create-game').removeClass('d-none')
+  $('#update-game').addClass('d-none')
 }
 
 const deleteGameSuccess = function (data) {
@@ -64,8 +66,12 @@ const clearGames = function () {
 
 const update2 = function () {
   $('#update-game').removeClass('d-none')
+  $('#game-message').text('')
   // hide create and show
   $('#create-game').addClass('d-none')
+  // populate inputs with current values
+  $('#update-name').val(store.gameName)
+  $('#update-comment').val(store.gameComment)
 }
 
 module.exports = {
