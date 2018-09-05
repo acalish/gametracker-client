@@ -44,6 +44,7 @@ const updateGameSuccess = function (data) {
 const updateGameFailure = function (data) {
   $('#game-message').text('unable to update this game')
   $('#update-game input').val('')
+  $('#create-game').removeClass('d-none')
 }
 
 const deleteGameSuccess = function (data) {
