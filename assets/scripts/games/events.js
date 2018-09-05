@@ -21,13 +21,13 @@ const onGetGames = function (event) {
     .catch(ui.getAllGamesFailure)
 }
 
-const onGetGame = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.getGame(data)
-    .then(ui.getGameSuccess)
-    .catch(ui.getGameFailure)
-}
+// const onGetGame = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   api.getGame(data)
+//     .then(ui.getGameSuccess)
+//     .catch(ui.getGameFailure)
+// }
 
 const onUpdateGame = function (event) {
   event.preventDefault()
@@ -72,14 +72,12 @@ const onHideGames = function (event) {
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame)
   $('#get-all-games').on('submit', onGetGames)
-  $('#get-game').on('submit', onGetGame)
+  // $('#get-game').on('submit', onGetGame)
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
   $('.content').on('click', '#update-btn', onUpdate2)
   $('#hide-games-btn').on('click', onHideGames)
 }
-
-// add handler to get the form, and then another one to submit that information
 
 module.exports = {
   addHandlers

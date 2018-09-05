@@ -24,19 +24,21 @@ const getAllGamesSuccess = function (data) {
   $('#hide-games-btn').removeClass('d-none')
 }
 
-const getGameSuccess = function (data) {
-  $('#game-message').text('Name: ' + data.game.name + ' Comment: ' + data.game.comment)
-  $('#get-game input').val('')
-}
-
-const getGameFailure = function (data) {
-  $('#game-message').text('unable to show this game')
-  $('#get-game input').val('')
-}
+// const getGameSuccess = function (data) {
+//   $('#game-message').text('Name: ' + data.game.name + ' Comment: ' + data.game.comment)
+//   $('#get-game input').val('')
+// }
+//
+// const getGameFailure = function (data) {
+//   $('#game-message').text('unable to show this game')
+//   $('#get-game input').val('')
+// }
 
 const updateGameSuccess = function (data) {
   // $('#game-message').text('Game updated: ' + data.game.name + ' Comment: ' + data.game.comment)
   $('#update-game input').val('')
+  $('#create-game').removeClass('d-none')
+  $('#update-game').addClass('d-none')
 }
 
 const updateGameFailure = function (data) {
@@ -47,6 +49,7 @@ const updateGameFailure = function (data) {
 const deleteGameSuccess = function (data) {
   $('#game-message').text('Game deleted')
   $('#delete-game input').val('')
+  $('#create-game').removeClass('d-none')
 }
 
 const deleteGameFailure = function (data) {
@@ -60,14 +63,16 @@ const clearGames = function () {
 
 const update2 = function () {
   $('#update-game').removeClass('d-none')
+  // hide create and show
+  $('#create-game').addClass('d-none')
 }
 
 module.exports = {
   createGameSuccess,
   createGameFailure,
   getAllGamesSuccess,
-  getGameSuccess,
-  getGameFailure,
+  // getGameSuccess,
+  // getGameFailure,
   updateGameSuccess,
   updateGameFailure,
   deleteGameSuccess,
