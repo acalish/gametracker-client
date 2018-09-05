@@ -22,6 +22,7 @@ const getAllGamesSuccess = function (data) {
   $('.content').append(getGamesHtml)
   $('#get-games input').val('')
   $('#clear-games-btn').removeClass('d-none')
+  $('#update-game').removeClass('d-none')
 }
 
 const getGameSuccess = function (data) {
