@@ -10,8 +10,8 @@ const onCreateGame = function (event) {
   const data = getFormFields(event.target)
   api.createGame(data)
     .then(ui.createGameSuccess)
-    // .then(ui.getAllGamesSuccess)
     .catch(ui.createGameFailure)
+    .then(() => onGetGames(event))
 }
 
 const onGetGames = function (event) {
