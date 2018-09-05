@@ -45,7 +45,7 @@ const deleteGame = function (gameId) {
   })
 }
 
-const update2 = function (data) {
+const updateGame = function (data) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.gameId,
     method: 'PATCH',
@@ -60,8 +60,6 @@ const update2 = function (data) {
 module.exports = {
   createGame,
   getAllGames,
-  // getGame,
-  // updateGame,
   deleteGame,
-  update2
+  updateGame
 }

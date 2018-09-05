@@ -60,7 +60,7 @@ const clearGames = function () {
   $('.content').empty()
 }
 
-const update2 = function () {
+const updateClick = function () {
   $('#update-game').removeClass('d-none')
   $('#game-message').text('')
   // hide create and show
@@ -81,5 +81,5 @@ module.exports = {
   deleteGameSuccess,
   deleteGameFailure,
   clearGames,
-  update2
+  updateClick
 }

@@ -32,7 +32,7 @@ const onGetGames = function (event) {
 const onUpdateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.update2(data)
+  api.updateGame(data)
     .then(() => onGetGames(event))
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFailure)
@@ -46,17 +46,7 @@ const onDeleteGame = function (event) {
     .catch(ui.deleteGameFailure)
 }
 
-// const onUpdate2 = function (event) {
-//   event.preventDefault()
-//   const gameId = $(event.target).closest('section').data('id')
-//   console.log('clicked update for', gameId)
-//   store.gameId = gameId
-//   api.update2(store.gameId)
-//     .then(ui.updateGamesSuccess)
-//     .catch(ui.updateGameFailure)
-// }
-
-const onUpdate2 = function (event) {
+const onUpdateClick = function (event) {
   event.preventDefault()
   const gameId = $(event.target).closest('section').data('id')
   store.gameId = gameId
@@ -64,7 +54,7 @@ const onUpdate2 = function (event) {
   store.gameName = gameName
   const gameComment = $(event.target).closest('section').data('comment')
   store.gameComment = gameComment
-  ui.update2()
+  ui.updateClick()
 }
 
 const onHideGames = function (event) {
@@ -77,7 +67,7 @@ const addHandlers = function () {
   $('#get-all-games').on('submit', onGetGames)
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
-  $('.content').on('click', '#update-btn', onUpdate2)
+  $('.content').on('click', '#update-btn', onUpdateClick)
   $('#hide-games-btn').on('click', onHideGames)
 }
 
