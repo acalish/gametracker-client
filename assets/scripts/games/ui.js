@@ -35,7 +35,7 @@ const getGameFailure = function (data) {
 }
 
 const updateGameSuccess = function (data) {
-  $('#game-message').text('Game updated: ' + data.game.name + ' Comment: ' + data.game.comment)
+  // $('#game-message').text('Game updated: ' + data.game.name + ' Comment: ' + data.game.comment)
   $('#update-game input').val('')
 }
 
