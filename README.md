@@ -1,4 +1,4 @@
-GameTracker is the first full stack app I have made. It is a place where people can register as users and then keep track of games (ideally board games) by providing comments about them.  I built an API that is hosted here https://github.com/acalish/rails-api-gametracker.  My front end can make successful GET / POST / UPDATE / DELETE calls to my back end.
+GameTracker is the first full stack app I have made. It is a place where people can register as users and then keep track of games (ideally board games) by providing comments about them.  I built an API that is hosted here https://sheltered-headland-81825.herokuapp.com/ and this is the respository. https://github.com/acalish/rails-api-gametracker.  My front end can make successful GET / POST / UPDATE / DELETE calls to my back end.
 
 User stories:
 As a user, I want to sign up, sign in, change password, and sign out.
