@@ -15,6 +15,8 @@ button {
 }
 
 h1 {
+  font-size: 50px;
+  margin: 20px;
   text-align: center;
 }
 
@@ -24,7 +26,9 @@ input {
 
 section {
   border: 3px solid $border-color;
-  margin: 10px;
+  margin: 10px auto;
   padding: 20px;
+  position: center;
   text-align: center;
+  width: 50%;
 }
