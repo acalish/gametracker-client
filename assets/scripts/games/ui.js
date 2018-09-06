@@ -7,12 +7,12 @@ const createGameSuccess = function (data) {
   $('#create-game input').val('')
   const createGameHtml = gamesTemplate({ games: data })
   $('.content').append(createGameHtml)
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 const createGameFailure = function () {
   $('#game-message').text('unable to create a game')
   $('#create-game input').val('')
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 
 const getAllGamesSuccess = function (data) {
@@ -22,7 +22,7 @@ const getAllGamesSuccess = function (data) {
   $('.content').append(getGamesHtml)
   $('#get-games input').val('')
   $('#hide-games-btn').removeClass('d-none')
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 
 // const getGameSuccess = function (data) {
@@ -40,7 +40,7 @@ const updateGameSuccess = function (data) {
   $('#create-game').removeClass('d-none')
   $('#update-game').addClass('d-none')
   $('#game-message').text('')
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 
 const updateGameFailure = function (data) {
@@ -48,24 +48,24 @@ const updateGameFailure = function (data) {
   $('#update-game input').val('')
   $('#create-game').removeClass('d-none')
   $('#update-game').addClass('d-none')
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 
 const deleteGameSuccess = function (data) {
   $('#delete-game input').val('')
   $('#create-game').removeClass('d-none')
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 
 const deleteGameFailure = function (data) {
   $('#game-message').text('unable to delete this game')
   $('#delete-game input').val('')
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 
 const clearGames = function () {
   $('.content').empty()
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 
 const updateClick = function () {
@@ -76,7 +76,7 @@ const updateClick = function () {
   // populate inputs with current values
   $('#update-name').val(store.gameName)
   $('#update-comment').val(store.gameComment)
-  $('#auth-message').addClass('d-none')
+  $('#auth-message').text('')
 }
 
 module.exports = {
