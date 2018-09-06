@@ -4,19 +4,29 @@ $background-color: #97cfca;
 $border-color: #3f7c9d;
 $font-color: #144149;
 
+.auth-actions {
+  float: right;
+}
+
 body {
   background-color: $background-color;
   color: $font-color;
   font-family: courier;
+  margin: 20px;
 }
 
 button {
   color: $font-color;
 }
 
+form {
+  padding-bottom: 20px;
+}
+
 h1 {
   font-size: 50px;
   margin: 20px;
+  padding-bottom: 20px;
   text-align: center;
 }
 

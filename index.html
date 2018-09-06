@@ -14,7 +14,6 @@
 
       <h3 id='auth-message'></h3>
 
-
       <form id='sign-up' class='sign-up'>
         <fieldset>
           <legend>Create an account</legend>
@@ -34,21 +33,27 @@
         </fieldset>
       </form>
 
-      <form id='change-password' class='d-none'>
-        <fieldset>
-          <legend>Change Password</legend>
+<div class="auth-actions">
+  <form id='change-password' class='d-none'>
+    <fieldset>
+      <legend>Change Password</legend>
+        <div>
           <input type="password" name="passwords[old]" placeholder="Old Password">
+        </div>
+        <div>
           <input type="password" name="passwords[new]" placeholder="New Password">
-          <button type="submit">Change Password</button>
-        </fieldset>
-      </form>
+        </div>
+      <button type="submit">Change Password</button>
+    </fieldset>
+  </form>
 
-      <form id='sign-out' class='d-none'>
-        <fieldset>
-          <legend>Sign Out</legend>
-          <button type="submit">Sign Out</button>
-        </fieldset>
-      </form>
+  <form id='sign-out' class='d-none'>
+    <fieldset>
+      <legend>Sign Out</legend>
+      <button type="submit">Sign Out</button>
+    </fieldset>
+  </form>
+</div>
 
     <h4 id='game-message' class='d-none'></h4>
 
@@ -56,17 +61,25 @@
       <form id='create-game'>
         <fieldset>
           <legend>Create Game</legend>
-          <input type="text" name="game[name]" placeholder="game name">
-          <input type="text" name="game[comment]" placeholder="comment">
+            <div>
+              <input type="text" name="game[name]" placeholder="game name">
+            </div>
+            <div>
+              <input type="text" name="game[comment]" placeholder="comment">
+            </div>
           <button type="submit">Create a Game</button>
         </fieldset>
       </form>
 
       <form id='update-game' class="d-none">
         <fieldset>
-          <legend>Update A Game</legend>
-          <input id='update-name' type="text" name="game[name]" placeholder="game name">
-          <input id='update-comment' type="text" name="game[comment]" placeholder="new comment">
+          <legend>Update Game</legend>
+            <div>
+              <input id='update-name' type="text" name="game[name]" placeholder="game name">
+            </div>
+            <div>
+              <input id='update-comment' type="text" name="game[comment]" placeholder="new comment">
+            </div>
           <button type="submit">Submit</button>
         </fieldset>
       </form>
