@@ -48,6 +48,8 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   $('#auth-message').text('Sign out successful')
   $('#sign-out input').val('')
+  // need to show / hide what I want the view at Sign up to be
+  store.user = null
 }
 
 const signOutFailure = function () {

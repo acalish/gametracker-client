@@ -28,22 +28,30 @@ const onChangePassword = function () {
     .catch(ui.changePasswordFailure)
 }
 
-const onSignOut = function () {
-  api.signOut()
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
-}
+// const onSignOut = function () {
+//   api.signOut()
+//     .then(ui.signOutSuccess)
+//     .catch(ui.signOutFailure)
+// }
 
 const onChangePwClick = function () {
   ui.changePwClick()
+}
+
+const onSignOut2 = function () {
+  console.log('sign out clicked')
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  // $('#sign-out').on('submit', onSignOut)
   $('#change-pw').on('click', onChangePwClick)
+  $('#sign-out2').on('click', onSignOut2)
 }
 
 module.exports = {
