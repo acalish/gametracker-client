@@ -34,11 +34,16 @@ const onSignOut = function () {
     .catch(ui.signOutFailure)
 }
 
+const onChangePwClick = function () {
+  ui.changePwClick()
+}
+
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#change-pw').on('click', onChangePwClick)
 }
 
 module.exports = {

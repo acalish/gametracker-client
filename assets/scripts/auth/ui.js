@@ -15,12 +15,14 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#auth-message').text('Welcome back, ' + store.user.email.substr(0, store.user.email.indexOf('@')))
   $('#sign-in input').val('')
-  $('#change-password').removeClass('d-none')
+  // $('#change-password').removeClass('d-none')
   $('#sign-out').removeClass('d-none')
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#game-message').removeClass('d-none')
   $('#game').removeClass('d-none')
+  $('#navbar').removeClass('d-none')
+  $('#title').addClass('d-none')
 }
 
 const signInFailure = function () {
@@ -28,9 +30,14 @@ const signInFailure = function () {
   $('#sign-in input').val('')
 }
 
+const changePwClick = function () {
+  $('#change-password').removeClass('d-none')
+}
+
 const changePasswordSuccess = function () {
   $('#auth-message').text('Password changed')
   $('#change-password input').val('')
+  $('#change-password').addClass('d-none')
 }
 
 const changePasswordFailure = function () {
@@ -56,5 +63,6 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  changePwClick
 }
