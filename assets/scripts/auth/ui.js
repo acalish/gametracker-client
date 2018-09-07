@@ -17,8 +17,8 @@ const signInSuccess = function (response) {
   $('#sign-in input').val('')
   // $('#change-password').removeClass('d-none')
   $('#sign-out').removeClass('d-none')
-  $('#sign-in').hide()
-  $('#sign-up').hide()
+  $('#sign-in').addClass('d-none')
+  $('#sign-up').addClass('d-none')
   $('#game-message').removeClass('d-none')
   $('#game').removeClass('d-none')
   $('#navbar').removeClass('d-none')
@@ -46,9 +46,16 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  $('#auth-message').text('Sign out successful')
+  // $('#auth-message').text('Sign out successful')
   $('#sign-out input').val('')
-  // need to show / hide what I want the view at Sign up to be
+  // Show sign up / sign in / title
+  $('#title').removeClass('d-none')
+  $('#sign-in').removeClass('d-none')
+  $('#sign-up').removeClass('d-none')
+  // hide nav bar, change password, update game, create game // auth-message
+  $('#auth-message').text('')
+  $('#navbar').addClass('d-none')
+  $('#game').addClass('d-none')
   store.user = null
 }
 
