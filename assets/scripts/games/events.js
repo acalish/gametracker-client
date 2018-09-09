@@ -76,7 +76,8 @@ const addHandlers = function () {
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
   $('.content').on('click', '#update-btn', onUpdateClick)
-  $('#hide-games-btn').on('click', onHideGames)
+  $('#hide-games').on('click', onHideGames)
+  // $('#hide-games-btn').on('click', onHideGames)
   $('#show-games').on('click', onGetGames)
 }
 
