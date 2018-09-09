@@ -63,7 +63,6 @@ const onHideGames = function (event) {
 }
 
 const onGetGames = function (event) {
-  console.log('show clicked')
   // event.preventDefault()
   api.getAllGames()
     .then(ui.getAllGamesSuccess)

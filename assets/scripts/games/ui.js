@@ -4,14 +4,14 @@ const gamesTemplate = require('./games-listing.handlebars')
 
 const createGameSuccess = function (data) {
   $('#game-message').text('')
-  $('#create-game input').val('')
+  $('#create-game-form input').val('')
   const createGameHtml = gamesTemplate({ games: data })
   $('.content').append(createGameHtml)
   $('#auth-message').text('')
 }
 const createGameFailure = function () {
   $('#game-message').text('unable to create a game')
-  $('#create-game input').val('')
+  $('#create-game-form input').val('')
   $('#auth-message').text('')
 }
 
@@ -24,6 +24,7 @@ const getAllGamesSuccess = function (data) {
   $('#content').removeClass('d-none')
   $('#hide-games-btn').removeClass('d-none')
   $('#auth-message').text('')
+  $('#change-password').addClass('d-none')
 }
 
 // const getGameSuccess = function (data) {
@@ -38,7 +39,7 @@ const getAllGamesSuccess = function (data) {
 
 const updateGameSuccess = function (data) {
   $('#update-game input').val('')
-  $('#create-game').removeClass('d-none')
+  $('#create-game-form').removeClass('d-none')
   $('#update-game').addClass('d-none')
   $('#game-message').text('')
   $('#auth-message').text('')
@@ -47,14 +48,14 @@ const updateGameSuccess = function (data) {
 const updateGameFailure = function (data) {
   $('#game-message').text('unable to update this game')
   $('#update-game input').val('')
-  $('#create-game').removeClass('d-none')
+  $('#create-game-form').removeClass('d-none')
   $('#update-game').addClass('d-none')
   $('#auth-message').text('')
 }
 
 const deleteGameSuccess = function (data) {
   $('#delete-game input').val('')
-  $('#create-game').removeClass('d-none')
+  $('#create-game-form').removeClass('d-none')
   $('#auth-message').text('')
 }
 
@@ -67,13 +68,14 @@ const deleteGameFailure = function (data) {
 const clearGames = function () {
   $('.content').empty()
   $('#auth-message').text('')
+  $('#change-password').addClass('d-none')
 }
 
 const updateClick = function () {
   $('#update-game').removeClass('d-none')
   $('#game-message').text('')
   // hide create and show
-  $('#create-game').addClass('d-none')
+  $('#create-game-form').addClass('d-none')
   // populate inputs with current values
   $('#update-name').val(store.gameName)
   $('#update-comment').val(store.gameComment)
