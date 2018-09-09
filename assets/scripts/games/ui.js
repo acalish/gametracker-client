@@ -21,6 +21,7 @@ const getAllGamesSuccess = function (data) {
   const getGamesHtml = gamesTemplate({ games: data.games })
   $('.content').append(getGamesHtml)
   $('#get-games input').val('')
+  $('#content').removeClass('d-none')
   $('#hide-games-btn').removeClass('d-none')
   $('#auth-message').text('')
 }

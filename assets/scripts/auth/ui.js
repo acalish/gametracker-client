@@ -56,6 +56,11 @@ const signOutSuccess = function () {
   $('#auth-message').text('')
   $('#navbar').addClass('d-none')
   $('#game').addClass('d-none')
+  $('#change-password').addClass('d-none')
+  $('#content').addClass('d-none')
+  $('#update-game').addClass('d-none')
+  // will go in the navbar
+  $('#hide-games-btn').addClass('d-none')
   store.user = null
 }
 
