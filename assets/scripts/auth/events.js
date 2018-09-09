@@ -39,7 +39,6 @@ const onChangePwClick = function () {
 }
 
 const onSignOut2 = function () {
-  console.log('sign out clicked')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)

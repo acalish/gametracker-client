@@ -14,12 +14,12 @@ const onCreateGame = function (event) {
     .catch(ui.createGameFailure)
 }
 
-const onGetGames = function (event) {
-  event.preventDefault()
-  api.getAllGames()
-    .then(ui.getAllGamesSuccess)
-    .catch(ui.getAllGamesFailure)
-}
+// const onGetGames = function (event) {
+//   event.preventDefault()
+//   api.getAllGames()
+//     .then(ui.getAllGamesSuccess)
+//     .catch(ui.getAllGamesFailure)
+// }
 
 // const onGetGame = function (event) {
 //   event.preventDefault()
@@ -62,13 +62,22 @@ const onHideGames = function (event) {
   ui.clearGames()
 }
 
+const onGetGames = function (event) {
+  console.log('show clicked')
+  // event.preventDefault()
+  api.getAllGames()
+    .then(ui.getAllGamesSuccess)
+    .catch(ui.getAllGamesFailure)
+}
+
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame)
-  $('#get-all-games').on('submit', onGetGames)
+  // $('#get-all-games').on('submit', onGetGames)
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)
   $('.content').on('click', '#update-btn', onUpdateClick)
   $('#hide-games-btn').on('click', onHideGames)
+  $('#show-games').on('click', onGetGames)
 }
 
 module.exports = {
