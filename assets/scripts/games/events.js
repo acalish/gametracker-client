@@ -70,7 +70,7 @@ const onGetGames = function (event) {
 }
 
 const addHandlers = function () {
-  $('#create-game').on('submit', onCreateGame)
+  $('#create-game-form').on('submit', onCreateGame)
   // $('#get-all-games').on('submit', onGetGames)
   $('#update-game').on('submit', onUpdateGame)
   $('.content').on('click', '#remove-btn', onDeleteGame)

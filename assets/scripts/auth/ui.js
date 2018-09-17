@@ -35,12 +35,14 @@ const changePwClick = function () {
 }
 
 const changePasswordSuccess = function () {
+  $('#create-game-form input').val('')
   $('#auth-message').text('Password changed')
   $('#change-password input').val('')
   $('#change-password').addClass('d-none')
 }
 
 const changePasswordFailure = function () {
+  $('#create-game-form input').val('')
   $('#auth-message').text('Password not changed')
   $('#change-password input').val('')
 }
@@ -48,6 +50,7 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   // $('#auth-message').text('Sign out successful')
   $('#sign-out input').val('')
+  $('#create-game-form input').val('')
   // Show sign up / sign in / title
   $('#title').removeClass('d-none')
   $('#sign-in').removeClass('d-none')
