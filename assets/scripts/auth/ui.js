@@ -51,6 +51,7 @@ const signOutSuccess = function () {
   // $('#auth-message').text('Sign out successful')
   $('#sign-out input').val('')
   $('#create-game-form input').val('')
+  $('#change-password input').val('')
   // Show sign up / sign in / title
   $('#title').removeClass('d-none')
   $('#sign-in').removeClass('d-none')
