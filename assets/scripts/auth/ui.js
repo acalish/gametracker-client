@@ -34,6 +34,8 @@ const signInFailure = function () {
 
 const changePwClick = function () {
   $('#change-password').removeClass('d-none')
+  $('#create-game-form input').val('')
+  $('#create-game-form textarea').val('')
 }
 
 const changePasswordSuccess = function () {

@@ -26,17 +26,8 @@ const getAllGamesSuccess = function (data) {
   $('#hide-games-btn').removeClass('d-none')
   $('#auth-message').text('')
   $('#change-password').addClass('d-none')
+  $('#update-game').addClass('d-none')
 }
-
-// const getGameSuccess = function (data) {
-//   $('#game-message').text('Name: ' + data.game.name + ' Comment: ' + data.game.comment)
-//   $('#get-game input').val('')
-// }
-//
-// const getGameFailure = function (data) {
-//   $('#game-message').text('unable to show this game')
-//   $('#get-game input').val('')
-// }
 
 const updateGameSuccess = function (data) {
   $('#create-game-form input').val('')
@@ -61,6 +52,7 @@ const deleteGameSuccess = function (data) {
   $('#delete-game input').val('')
   $('#create-game-form').removeClass('d-none')
   $('#auth-message').text('')
+  $('#update-game').addClass('d-none')
 }
 
 const deleteGameFailure = function (data) {
@@ -74,6 +66,8 @@ const clearGames = function () {
   $('.content').empty()
   $('#auth-message').text('')
   $('#change-password').addClass('d-none')
+  $('#update-game').addClass('d-none')
+  $('#create-game-form').removeClass('d-none')
 }
 
 const updateClick = function () {
@@ -92,8 +86,6 @@ module.exports = {
   createGameSuccess,
   createGameFailure,
   getAllGamesSuccess,
-  // getGameSuccess,
-  // getGameFailure,
   updateGameSuccess,
   updateGameFailure,
   deleteGameSuccess,
