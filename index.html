@@ -39,25 +39,38 @@
 <h1 id='title'>🎲 GameTracker 🎲</h1>
 
 <h3 id='auth-message'></h3>
+<!-- sign up form -->
+<div class="card bg-light mb-3 sign-up">
+  <div class="card-header">Create an account</div>
+  <div class="card-body">
+    <form id='sign-up' class='sign-up'>
+      <fieldset>
+        <input type="email" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <button type="submit">Sign Up</button>
+      </fieldset>
+    </form>
+    <p>Already have an account? <a class='sign-in-btn' href="#">Sign In</a></p>
+  </div>
+</div>
 
-      <form id='sign-up' class='sign-up'>
-        <fieldset>
-          <legend>Create an account</legend>
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <button type="submit">Sign Up</button>
-        </fieldset>
-      </form>
 
-      <form id='sign-in' class='sign-in'>
-        <fieldset>
-          <legend>Already have an account? Sign in below</legend>
-          <input type="email" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <button type="submit">Sign In</button>
-        </fieldset>
-      </form>
+<!-- sign in form -->
+<div class="card bg-light mb-3 sign-in">
+  <div class="card-header">Already have an account? Sign in below</div>
+    <div class="card-body">
+    <form id='sign-in' class='sign-in'>
+      <fieldset>
+        <input type="email" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <button type="submit">Sign In</button>
+      </fieldset>
+    </form>
+    <p>Need an account? <a class='sign-up-btn' href='#'>Register here</a></p>
+  </div>
+</div>
+
 
 <div class="auth-actions">
   <form id='change-password' class='d-none'>
@@ -72,13 +85,6 @@
       <button type="submit">Submit</button>
     </fieldset>
   </form>
-
-  <!-- <form id='sign-out' class='d-none'>
-    <fieldset>
-      <legend>Sign Out</legend>
-      <button type="submit">Sign Out</button>
-    </fieldset>
-  </form> -->
 </div>
 
     <h4 id='game-message' class='d-none'></h4>
