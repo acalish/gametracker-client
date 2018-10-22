@@ -93,16 +93,18 @@
 
     <div id='game' class='d-none'>
       <form id='create-game-form'>
-        <fieldset>
-          <legend>Create Game</legend>
+        <div class="form-group">
+            <legend>Create Game</legend>
             <div>
+              <label>Name</label>
               <input type="text" name="game[name]" placeholder="game name">
             </div>
             <div>
-              <input type="text" name="game[comment]" placeholder="comment">
+              <label>Comment</label>
+              <textarea class="form-control" name="game[comment]" placeholder="comment"></textarea>
             </div>
-          <button type="submit">Create a Game</button>
-        </fieldset>
+            <button type="submit">Create a Game</button>
+        </div>
       </form>
 
       <form id='update-game' class="d-none">

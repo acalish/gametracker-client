@@ -18,7 +18,9 @@ body {
 }
 
 button {
-  color: $font-color;
+  background-color: $font-color;
+  color: $white;
+  margin-top: 5px;
 }
 
 .btn {
@@ -59,4 +61,8 @@ section {
 
 .card-header {
   font-size: 20px;
+}
+
+.form-control {
+  width: 300px;
 }
