@@ -4,28 +4,46 @@ $background-color: #97cfca;
 $border-color: #3f7c9d;
 $font-color: #144149;
 $white: #ccc;
+$black: #000;
+
+$blue: #77c9d4;
+$teal: #57bc90;
+$green: #015249;
+// background
+$grey: #a5a5af;
 
 .auth-actions {
   float: right;
 }
 
 body {
-  background-color: $background-color;
-  color: $font-color;
+  // background-color: $background-color;
+  background-color: $blue;
+  // color: $font-color;
+  color: $green;
   font-family: courier;
   margin: 20px;
   padding-top: 40px;
 }
 
+.navbar {
+  background-color: $teal !important;
+  border-bottom: 1px solid $black;
+}
+
 button {
-  background-color: $font-color;
-  color: $white;
+  // background-color: $font-color;
+  background-color: $teal;
+  // color: $white;
+  color: $green;
   margin-top: 5px;
 }
 
 .btn {
-  background-color: $font-color;
-  color: $white;
+  // background-color: $font-color;
+  background-color: $teal;
+  // color: $white;
+  color: $green;
 }
 
 form {
@@ -65,4 +83,8 @@ section {
 
 .form-control {
   width: 300px;
+}
+
+#auth-message {
+  margin-top: 15px;
 }

@@ -17,7 +17,6 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#auth-message').text('Welcome back, ' + store.user.email.substr(0, store.user.email.indexOf('@')))
   $('#sign-in input').val('')
-  // $('#change-password').removeClass('d-none')
   $('#sign-out').removeClass('d-none')
   $('.sign-in').addClass('d-none')
   $('.sign-up').addClass('d-none')
@@ -52,7 +51,6 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  // $('#auth-message').text('Sign out successful')
   $('#sign-out input').val('')
   $('#create-game-form input').val('')
   $('#change-password input').val('')
