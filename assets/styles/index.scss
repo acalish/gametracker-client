@@ -1,25 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
-$background-color: #97cfca;
-$border-color: #3f7c9d;
-$font-color: #144149;
-$white: #ccc;
-$black: #000;
-
 $blue: #77c9d4;
 $teal: #57bc90;
 $green: #015249;
-// background
-$grey: #a5a5af;
+$grey: #e0e0e0;
+$link-back: rgba(255, 255, 255, .6);
+
 
 .auth-actions {
   float: right;
 }
 
 body {
-  // background-color: $background-color;
-  background-color: $blue;
-  // color: $font-color;
+  background-color: $grey;
   color: $green;
   font-family: courier;
   margin: 20px;
@@ -32,21 +25,32 @@ body {
 }
 
 button {
-  // background-color: $font-color;
   background-color: $teal;
-  // color: $white;
+  border-radius: 6px;
   color: $green;
   margin-top: 5px;
 }
 
 .btn {
-  // background-color: $font-color;
   background-color: $teal;
-  // color: $white;
+  border: 1px solid $green;
+  border-radius: 6px;
   color: $green;
+  width: 200px;
+}
+
+.game-btn {
+  background-color: $teal;
+  border: 1px solid $green;
+  border-radius: 6px;
+  color: $green;
+  margin-bottom: 10px;
+  margin-left: 400px;
+  width: 200px;
 }
 
 form {
+  border-radius: 6px;
   padding-bottom: 20px;
 }
 
@@ -58,26 +62,21 @@ h1 {
 }
 
 input {
-  border: 1px solid $border-color;
-}
-
-section {
-  border: 3px solid $border-color;
-  margin: 10px auto;
-  padding: 20px;
-  position: center;
-  text-align: center;
-  width: 50%;
+  border: 1px solid $green;
+  border-radius: 6px;
 }
 
 .card {
-  border: 2px solid $font-color;
-  margin: 150px;
+  background-color: $blue !important;
+  border: 2px solid $green;
+  border-radius: 6px;
+  margin: 15px 150px;
   min-width: inherit;
   text-align: center;
 }
 
 .card-header {
+  background-color: $teal !important;
   font-size: 20px;
 }
 
@@ -87,4 +86,11 @@ section {
 
 #auth-message {
   margin-top: 15px;
+}
+
+.nav-link {
+  background: $link-back;
+  background-color: $grey;
+  border-radius: 6px;
+  margin: 5px;
 }

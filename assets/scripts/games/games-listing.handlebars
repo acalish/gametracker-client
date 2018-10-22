@@ -1,11 +1,13 @@
 
 {{#each games as |game|}}
   <section data-id="{{game.id}}" data-name="{{game.name}}" data-comment="{{game.comment}}">
-    <h1 data-id="{{game.id}}"> <small>{{game.name}}</small></h1>
-      <p>"{{game.comment}}"</p>
-        <button id='remove-btn'>Remove</button>
-        <button id='update-btn'>Update</button>
-      </section>
+    <div class="card bg-light mb-3 game-card">
+      <h1 data-id="{{game.id}}"> <small>{{game.name}}</small></h1>
+        <p>"{{game.comment}}"</p>
+          <button class='game-btn' id='remove-btn'>Remove</button>
+          <button class='game-btn' id='update-btn'>Update</button>
+    </div>
+  </section>
 {{else}}
 <div>
   <p>You do not have any games</p>
