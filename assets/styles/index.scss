@@ -25,14 +25,14 @@ body {
 }
 
 button {
-  background-color: $teal;
+  background-color: $blue;
   border-radius: 6px;
   color: $green;
   margin-top: 5px;
 }
 
 .btn {
-  background-color: $teal;
+  background-color: $blue;
   border: 1px solid $green;
   border-radius: 6px;
   color: $green;
@@ -40,7 +40,7 @@ button {
 }
 
 .game-btn {
-  background-color: $teal;
+  background-color: $blue;
   border: 1px solid $green;
   border-radius: 6px;
   color: $green;
@@ -67,7 +67,7 @@ input {
 }
 
 .card {
-  background-color: $blue !important;
+  background-color: $teal !important;
   border: 2px solid $green;
   border-radius: 6px;
   margin: 15px 150px;
@@ -76,7 +76,8 @@ input {
 }
 
 .card-header {
-  background-color: $teal !important;
+  background-color: $blue !important;
+  border-bottom: 2px solid $green;
   font-size: 20px;
 }
 
