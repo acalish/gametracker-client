@@ -51,6 +51,8 @@ const addHandlers = function () {
   // $('#sign-out').on('submit', onSignOut)
   $('#change-pw').on('click', onChangePwClick)
   $('#sign-out2').on('click', onSignOut2)
+  $('#sign-in-btn').on('click', ui.toggleSignIn)
+  $('#sign-up-btn').on('click', ui.toggleSignUp)
 }
 
 module.exports = {

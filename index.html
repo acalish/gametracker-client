@@ -40,18 +40,19 @@
 
 <h3 id='auth-message'></h3>
 <!-- sign up form -->
-<div class="card bg-light mb-3 sign-up">
+<div class="card bg-light mb-3 sign-up d-none">
   <div class="card-header">Create an account</div>
   <div class="card-body">
-    <form id='sign-up' class='sign-up'>
+    <p class="sign-in-status"></p>
+    <form id='sign-up'>
       <fieldset>
         <input type="email" name="credentials[email]" placeholder="Email">
         <input type="password" name="credentials[password]" placeholder="Password">
         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-        <button type="submit">Sign Up</button>
+        <button type="submit" class='btn'>Sign Up</button>
       </fieldset>
     </form>
-    <p>Already have an account? <a class='sign-in-btn' href="#">Sign In</a></p>
+    <p>Already have an account? <a id='sign-in-btn' href="#">Sign In</a></p>
   </div>
 </div>
 
@@ -60,14 +61,15 @@
 <div class="card bg-light mb-3 sign-in">
   <div class="card-header">Already have an account? Sign in below</div>
     <div class="card-body">
-    <form id='sign-in' class='sign-in'>
+      <p class="sign-in-status"></p>
+    <form id='sign-in'>
       <fieldset>
         <input type="email" name="credentials[email]" placeholder="Email">
         <input type="password" name="credentials[password]" placeholder="Password">
-        <button type="submit">Sign In</button>
+        <button type="submit" class='btn'>Sign In</button>
       </fieldset>
     </form>
-    <p>Need an account? <a class='sign-up-btn' href='#'>Register here</a></p>
+    <p>Need an account? <a id='sign-up-btn' href='#'>Register here</a></p>
   </div>
 </div>
 
@@ -115,24 +117,8 @@
           <button type="submit">Submit</button>
         </fieldset>
       </form>
-
-      <!-- <form id='get-game'>
-        <fieldset>
-          <legend>Show A Game</legend>
-          <input type="text" name="game[id]" placeholder="game ID">
-          <button type="submit">Show a Game</button>
-        </fieldset>
-      </form> -->
-
-      <!-- <form id='get-all-games'>
-        <fieldset>
-          <! <legend>Show All Games</legend> -->
-          <!-- <button type="submit">Show All Games</button>
-        </fieldset>
-      </form> -->
     </div>
 
-    <!-- <button id='hide-games-btn' class='d-none'>Hide Games</button> -->
 
       <main>
         <div id="content" class="content"></div>

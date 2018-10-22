@@ -4,6 +4,8 @@ const store = require('../store.js')
 const signUpSuccess = function () {
   $('#auth-message').text('Sign up successful, please sign in')
   $('#sign-up input').val('')
+  $('.sign-up').addClass('d-none')
+  $('.sign-in').removeClass('d-none')
 }
 const signUpFailure = function () {
   $('#auth-message').text('Sign up failed, please check that your passwords match')
@@ -17,8 +19,8 @@ const signInSuccess = function (response) {
   $('#sign-in input').val('')
   // $('#change-password').removeClass('d-none')
   $('#sign-out').removeClass('d-none')
-  $('#sign-in').addClass('d-none')
-  $('#sign-up').addClass('d-none')
+  $('.sign-in').addClass('d-none')
+  $('.sign-up').addClass('d-none')
   $('#game-message').removeClass('d-none')
   $('#game').removeClass('d-none')
   $('#navbar').removeClass('d-none')
@@ -65,12 +67,27 @@ const signOutSuccess = function () {
   $('#update-game').addClass('d-none')
   // will go in the navbar
   $('#hide-games-btn').addClass('d-none')
+  $('.sign-in').removeClass('d-none')
   store.user = null
 }
 
 const signOutFailure = function () {
   $('#auth-message').text('Sign out failed')
   $('#sign-out input').val('')
+}
+
+const toggleSignUp = function () {
+  $('.sign-in').addClass('d-none')
+  $('.sign-up').removeClass('d-none')
+  $('#sign-in input').val('')
+  $('#auth-message').text('')
+}
+
+const toggleSignIn = function () {
+  $('.sign-in').removeClass('d-none')
+  $('.sign-up').addClass('d-none')
+  $('#sign-up input').val('')
+  $('#auth-message').text('')
 }
 
 module.exports = {
@@ -82,5 +99,7 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-  changePwClick
+  changePwClick,
+  toggleSignIn,
+  toggleSignUp
 }
