@@ -3,6 +3,7 @@
 $background-color: #97cfca;
 $border-color: #3f7c9d;
 $font-color: #144149;
+$white: #ccc;
 
 .auth-actions {
   float: right;
@@ -18,6 +19,11 @@ body {
 
 button {
   color: $font-color;
+}
+
+.btn {
+  background-color: $font-color;
+  color: $white;
 }
 
 form {
@@ -42,4 +48,15 @@ section {
   position: center;
   text-align: center;
   width: 50%;
+}
+
+.card {
+  border: 2px solid $font-color;
+  margin: 150px;
+  min-width: inherit;
+  text-align: center;
+}
+
+.card-header {
+  font-size: 20px;
 }
